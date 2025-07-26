@@ -52,3 +52,4 @@ dist/
 reports
 .wireit
 .swc
+package-lock.json
