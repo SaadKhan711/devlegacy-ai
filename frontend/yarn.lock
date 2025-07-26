@@ -3667,8 +3667,7 @@ node-releases@^2.0.18:
 
 "node-watchexec@github:longdog/node-watchexec":
   version "1.0.0"
-  resolved "https://codeload.github.com/longdog/node-watchexec/tar.gz/252a792e1dae32c773470d677cf39a97dbb1b596"
-  integrity sha512-2nsIHIjj5VRaHgItSrRvgJQiizDpyGpYBSpXopu16wyY6h/GfqeT96K9DkUUNhQu8Z405X28lkgnwfIjQXX/eg==
+  resolved "git+ssh://git@github.com/longdog/node-watchexec.git#252a792e1dae32c773470d677cf39a97dbb1b596"
   dependencies:
     adm-zip "^0.5.5"
 
