@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './app/app';
-import './globals.css'; // Or './globals.css' depending on your file name
+import App from './App';
+import './index.css'; // Or './globals.css' depending on your file name
 import { Auth0Provider } from '@auth0/auth0-react';
 import { BrowserRouter } from "react-router-dom";
 
@@ -28,3 +28,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     </BrowserRouter>
   </React.StrictMode>,
 );
+

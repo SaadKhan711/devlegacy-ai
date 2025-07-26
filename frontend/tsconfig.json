@@ -28,12 +28,12 @@
     "lib": ["DOM", "esnext"],
     "baseUrl": ".",
     "paths": {
-      "@/lib/utils": ["./src/utils/index"],
+      "@/lib/utils": ["./src/lib/utils"],
       "@/components": ["./src/components/*"],
       "@/*": ["./src/*"]
     },
     "plugins": [],
-    "types": ["vitest/globals"]
+    "types":[]
   },
   "include": ["src"]
 }
