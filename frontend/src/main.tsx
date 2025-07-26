@@ -1,15 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 import App from './App';
-import './index.css'; // Or './globals.css' depending on your file name
+import './index.css'
 import { Auth0Provider } from '@auth0/auth0-react';
 import { BrowserRouter } from "react-router-dom";
 
-// **REPLACE WITH YOUR REAL DOMAIN AND CLIENT ID**
-const domain = 'dev-h5dpnpgh5uu708zs.us.auth0.com';
+// **REPLACE WITH YOUR REAL CREDENTIALS**
+const domain = ' dev-h5dpnpgh5uu708zs.us.auth0.com';
 const clientId = 'SuXfuVg4h2YV8k7PR1syS54Z1OH1foLA';
-
-// **PASTE THE API IDENTIFIER YOU CREATED IN THE AUTH0 DASHBOARD**
 const audience = 'https://api.devlegacy.ai';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -27,5 +25,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       </Auth0Provider>
     </BrowserRouter>
   </React.StrictMode>,
-);
-
+)
