@@ -1,9 +1,0 @@
-[build]
-builder = "NIXPACKS"
-
-[nixpacks]
-startCommand = "java -jar target/devlegacy-0.0.1-SNAPSHOT.jar"
-
-[[nixpacks.phases]]
-name = "build"
-cmds = ["cd backend && mvn clean package -DskipTests && cd .."]
