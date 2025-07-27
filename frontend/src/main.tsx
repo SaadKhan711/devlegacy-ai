@@ -6,7 +6,7 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import { BrowserRouter } from "react-router-dom";
 
 // **REPLACE WITH YOUR REAL CREDENTIALS**
-const domain = ' dev-h5dpnpgh5uu708zs.us.auth0.com';
+const domain = 'dev-h5dpnpgh5uu708zs.us.auth0.com';
 const clientId = 'SuXfuVg4h2YV8k7PR1syS54Z1OH1foLA';
 const audience = 'https://api.devlegacy.ai';
 
