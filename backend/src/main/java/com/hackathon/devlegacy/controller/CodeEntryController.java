@@ -11,6 +11,7 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.Map;
 
 import java.util.List;
 
@@ -65,6 +66,10 @@ public class CodeEntryController {
             return ResponseEntity.status(500).build();
         }
     }
+    @GetMapping("/health")
+public Map<String, String> healthCheck() {
+    return Map.of("status", "UP");
+}
 
     // --- NEW GET ENDPOINT FOR HISTORY ---
     @GetMapping

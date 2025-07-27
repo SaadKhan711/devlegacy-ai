@@ -26,7 +26,7 @@ export const DashboardPage = () => {
   const fetchHistory = async () => {
     try {
       const token = await getAccessTokenSilently();
-     const apiUrl = `${import.meta.env.VITE_API_BASE_URL}/api/code-entries`;
+    const apiUrl = `http://localhost:8080/api/code-entries`;
 
 const response = await axios.get(
   apiUrl, 
@@ -49,7 +49,7 @@ const response = await axios.get(
     setAnalysis(null);
     try {
       const token = await getAccessTokenSilently();
-      const apiUrl = `${import.meta.env.VITE_API_BASE_URL}/api/code-entries`;
+      const apiUrl = `http://localhost:8080/api/code-entries`;
 
 const response = await axios.post(
   apiUrl,
