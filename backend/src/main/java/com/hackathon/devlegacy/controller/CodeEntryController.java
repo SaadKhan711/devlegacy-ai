@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/code-entries")
-@CrossOrigin("http://localhost:5173") // Make sure this matches your frontend URL
+@CrossOrigin({"http://localhost:5173", "https://lively-churros-737f1e.netlify.app"}) // Make sure this matches your frontend URL
 public class CodeEntryController {
 
     private final GeminiService geminiService;
