@@ -26,9 +26,12 @@ export const DashboardPage = () => {
   const fetchHistory = async () => {
     try {
       const token = await getAccessTokenSilently();
-      const response = await axios.get("http://localhost:8080/api/code-entries", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+     const apiUrl = `${import.meta.env.VITE_API_BASE_URL}/api/code-entries`;
+
+const response = await axios.get(
+  apiUrl, 
+  { headers: { Authorization: `Bearer ${token}` } }
+);
       setHistory(response.data.reverse());
     } catch (err) {
       console.error("Error fetching history:", err);
@@ -46,11 +49,13 @@ export const DashboardPage = () => {
     setAnalysis(null);
     try {
       const token = await getAccessTokenSilently();
-      const response = await axios.post(
-        "http://localhost:8080/api/code-entries",
-        { code },
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
+      const apiUrl = `${import.meta.env.VITE_API_BASE_URL}/api/code-entries`;
+
+const response = await axios.post(
+  apiUrl,
+  { code },
+  { headers: { Authorization: `Bearer ${token}` } }
+);
       setAnalysis(response.data);
       fetchHistory();
     } catch (err) {
