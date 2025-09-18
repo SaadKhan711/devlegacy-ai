@@ -1,0 +1,7 @@
+# nixpacks.toml
+
+[phases.build]
+cmds = ["mvn clean package -DskipTests"]
+
+[start]
+command = "java -jar target/devlegacy-0.0.1-SNAPSHOT.jar"

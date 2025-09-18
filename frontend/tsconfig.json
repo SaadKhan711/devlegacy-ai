@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "ts-node": {
+    "swc": true,
+    "transpileOnly": true,
+    "require": ["tsconfig-paths/register"]
+  },
+  "compilerOptions": {
+    "target": "ES2020",
+    "module":"esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "importHelpers": true,
+    "strict": true,
+    "noEmit": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitAny": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "outDir": "dist",
+    "pretty": true,
+    "esModuleInterop": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": false,
+    "skipLibCheck": true,
+    "lib": ["DOM", "esnext"],
+    "baseUrl": ".",
+    "paths": {
+      "@/lib/utils": ["./src/lib/utils"],
+      "@/components": ["./src/components/*"],
+      "@/*": ["./src/*"]
+    },
+    "plugins": [],
+    "types":[]
+  },
+  "include": ["src"]
+}
