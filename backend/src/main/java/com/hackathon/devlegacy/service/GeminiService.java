@@ -17,11 +17,9 @@ public class GeminiService {
     private final RestTemplate restTemplate = new RestTemplate();
 
     public String analyzeCode(String codeToAnalyze) {
-        // The URL for the Gemini API REST endpoint
-        String apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + geminiApiKey;
+                String apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + geminiApiKey;
 
-        // The same prompt as before
-        String prompt = """
+                String prompt = """
                 Analyze the following Java code snippet. Provide the output in a clean JSON format with three keys: "explanation", "suggestions", and "generatedTests".
 
                 - "explanation": A clear, concise explanation of what the code does.
@@ -34,7 +32,6 @@ public class GeminiService {
                 ```
                 """.formatted(codeToAnalyze);
         
-        // Construct the JSON body for the REST API
         String requestBody = """
                 {
                   "contents": [
@@ -50,17 +47,15 @@ public class GeminiService {
                     "response_mime_type": "application/json"
                   }
                 }
-                """.formatted(prompt.replace("\"", "\\\"")); // Escape quotes in the prompt
+                """.formatted(prompt.replace("\"", "\\\"")); 
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
         HttpEntity<String> entity = new HttpEntity<>(requestBody, headers);
         
-        // Make the POST request
-        JsonNode response = restTemplate.postForObject(apiUrl, entity, JsonNode.class);
+                JsonNode response = restTemplate.postForObject(apiUrl, entity, JsonNode.class);
 
-        // Navigate the JSON response to get the actual content
         if (response != null && response.has("candidates")) {
             return response.get("candidates").get(0).get("content").get("parts").get(0).get("text").asText();
         }

@@ -17,15 +17,11 @@ public class DevlegacyApplication {
     @Bean
     CommandLineRunner runner(CodeEntryRepository repository) {
         return args -> {
-            // Create a sample entry
-            CodeEntry testEntry = new CodeEntry();
+                        CodeEntry testEntry = new CodeEntry();
             testEntry.setUserId("test-user-123");
             testEntry.setOriginalCode("public static void main(String[] args) {}");
 
-            // Save it to the database
-            repository.save(testEntry);
-
-
+                        repository.save(testEntry);
         };
     }
 }

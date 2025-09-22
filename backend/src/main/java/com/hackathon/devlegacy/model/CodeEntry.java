@@ -9,16 +9,16 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-@Entity // Marks this class as a database table
+@Entity 
 public class CodeEntry {
 
-    @Id // Marks this field as the primary key
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-increments the ID
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Long id;
 
     private String userId;
 
-    @Column(length = 4000) // Allows for longer code snippets
+    @Column(length = 4000) 
     private String originalCode;
 
     @Column(length = 4000)

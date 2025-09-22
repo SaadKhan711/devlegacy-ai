@@ -114,18 +114,18 @@ export const DashboardPage = () => {
           </CardHeader>
           <CardContent className="flex-1 pr-2">
             {history.length > 0 ? (
-              <ul className="space-y-1">
+              <ol className="list-decimal pl-5 space-y-1 marker:text-slate-400">
                 {history.map((entry) => (
                   <li key={entry.id}>
                     <button
                       className="w-full text-left p-2 rounded-md hover:bg-slate-700/50 transition-colors text-sm text-slate-300 truncate"
                       onClick={() => handleHistoryClick(entry)}
                     >
-                      {(entry.originalCode?.split("\n")[0] ?? "Code Snippet").substring(0, 50)}
+                      {(entry.explanation?.split("\n")[0] ?? "Code Snippet").substring(0, 50)}
                     </button>
                   </li>
                 ))}
-              </ul>
+              </ol>
             ) : (
               <p className="text-sm text-slate-500 px-2">
                 Your past entries will appear here.
