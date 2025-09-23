@@ -6,19 +6,21 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp; 
+
 import java.time.LocalDateTime;
 
 @Data
-@Entity 
+@Entity
 public class CodeEntry {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String userId;
 
-    @Column(length = 4000) 
+    @Column(length = 4000)
     private String originalCode;
 
     @Column(length = 4000)
@@ -30,5 +32,7 @@ public class CodeEntry {
     @Column(length = 4000)
     private String generatedTests;
 
-    private LocalDateTime createdAt = LocalDateTime.now();
-}
+        @CreationTimestamp 
+    @Column(nullable = false, updatable = false) 
+    private LocalDateTime createdAt; 
+    }
